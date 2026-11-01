@@ -1,0 +1,23 @@
+digraph task_check {
+  graph [label="Flowchart: run_tasks (simplified)", labelloc=t, rankdir=TB];
+  node [fontname="Arial", shape=box];
+  start [label="Start", shape=oval];
+  config [label="Validate jobs and output paths"];
+  run [label="Execution\nrequested?", shape=diamond];
+  plan [label="Show command plan", shape=parallelogram];
+  execute [label="Run program without a shell"];
+  outputs [label="Check outputs and freshness"];
+  valid [label="Process and artifacts\nsuccessful?", shape=diamond];
+  pass [label="Report success", shape=parallelogram];
+  fail [label="Report failure", shape=parallelogram];
+  finish [label="End", shape=oval];
+  start -> config -> run;
+  run -> plan [label="no"];
+  run -> execute [label="yes"];
+  execute -> outputs -> valid;
+  valid -> pass [label="yes"];
+  valid -> fail [label="no"];
+  plan -> finish;
+  pass -> finish;
+  fail -> finish;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "plaidshirt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/render-dot.test.mjs"
+  },
+  "devDependencies": {
+    "@viz-js/viz": "3.25.0",
+    "jsdoc": "^4.0.4"
+  }
+}

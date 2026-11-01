@@ -1,0 +1,16 @@
+@startuml
+title Project installation: install_project
+start
+:Read skill files;
+:Check destinations and existing hashes;
+:Prepare project instructions with a managed section;
+if (Conflict or invalid path?) then (yes)
+  :Report error;
+  stop
+else (no)
+  :All planned files have been checked;
+endif
+:Write changed files only;
+:Report installed hosts and changes;
+stop
+@enduml

@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "documentation": [
+    {
+      "name": "Sphinx developer documentation",
+      "command": [
+        "{python}",
+        "-m",
+        "sphinx",
+        "-E",
+        "-a",
+        "-b",
+        "html",
+        "-W",
+        "--keep-going",
+        "docs",
+        "build/docs"
+      ],
+      "artifacts": [
+        {
+          "path": "build/docs/index.html",
+          "contains": [
+            "PlaidShirt"
+          ]
+        },
+        {
+          "path": "build/docs/api.html",
+          "contains": [
+            "install_project",
+            "run_tasks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JSDoc for the optional DOT renderer",
+      "command": [
+        "node",
+        "node_modules/jsdoc/jsdoc.js",
+        "-c",
+        "jsdoc.json"
+      ],
+      "artifacts": [
+        {
+          "path": "build/jsdoc/module-plaidshirt-dot.html",
+          "contains": [
+            "renderDot"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "PlantUML models",
+      "command": [
+        "java",
+        "-jar",
+        ".tools/plantuml.jar",
+        "-tsvg",
+        "-failfast2",
+        "-o",
+        "{project}/build/diagrams",
+        "docs/diagrams/components.puml",
+        "docs/diagrams/install-activity.puml",
+        "docs/diagrams/java-example-class.puml",
+        "docs/diagrams/inventory-example-er.puml"
+      ],
+      "artifacts": [
+        {
+          "path": "build/diagrams/components.svg"
+        },
+        {
+          "path": "build/diagrams/install-activity.svg"
+        },
+        {
+          "path": "build/diagrams/java-example-class.svg"
+        },
+        {
+          "path": "build/diagrams/inventory-example-er.svg"
+        }
+      ]
+    },
+    {
+      "name": "Graphviz flowchart with Node.js",
+      "command": [
+        "node",
+        "skills/plaidshirt/scripts/render_dot.mjs",
+        "docs/diagrams/task-pap.dot",
+        "build/diagrams/task-pap.svg"
+      ],
+      "artifacts": [
+        {
+          "path": "build/diagrams/task-pap.svg",
+          "contains": [
+            "command plan",
+            "run_tasks"
+          ]
+        }
+      ]
+    }
+  ]
+}

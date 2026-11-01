@@ -1,0 +1,70 @@
+[
+  {
+    "id": "java-readable-refactor",
+    "request": "Refactor a nested inventory check. Preserve behavior and the public API, introduce descriptive steps, and document private helpers. Build Javadoc.",
+    "setup": "A Java project with nested validity, quantity, and approval checks, plus existing behavior tests.",
+    "checks": [
+      "Existing tests pass",
+      "Side effects are preserved",
+      "Javadoc includes affected public and private elements",
+      "Contracts match actual failure paths"
+    ]
+  },
+  {
+    "id": "php-contract-change",
+    "request": "Add an optional filter to the PHP service and update affected callers and PHPDoc.",
+    "setup": "A PHP service with three callers, typed parameters, and configured phpDocumentor.",
+    "checks": [
+      "All callers remain compatible",
+      "No invented return type",
+      "Consistent DocBlocks",
+      "Documentation is actually generated"
+    ]
+  },
+  {
+    "id": "python-doc-failure",
+    "request": "The function has been extended. Update its docstrings and build the existing Sphinx documentation.",
+    "setup": "A Python module with outdated Google-style parameter documentation and an incorrect Sphinx import path.",
+    "checks": [
+      "Import issue fixed or precisely reported as unresolved",
+      "No false success claim",
+      "Parameters and failures documented",
+      "Generated function page includes the changed contract"
+    ]
+  },
+  {
+    "id": "models-from-evidence",
+    "request": "Create a readable project overview with appropriate UML and ER diagrams, plus an algorithm flowchart for import validation.",
+    "setup": "A small Java project with an SQL schema, a nullable foreign key, and a transaction boundary in its import.",
+    "checks": [
+      "Class view matches code",
+      "ER optionality matches the schema",
+      "Flowchart includes failure paths",
+      "Activity and flowchart notations are labeled accurately",
+      "Diagram sources are rendered locally"
+    ]
+  },
+  {
+    "id": "review-outside-diff",
+    "request": "Review this change, including documentation and models. Do not change code yet.",
+    "setup": "A renamed method with an untouched caller, an outdated documented return value, and a stale sequence diagram.",
+    "checks": [
+      "Broken caller identified",
+      "Documentation and model discrepancies reported separately",
+      "Concrete locations and consequences",
+      "No unrequested modifications"
+    ]
+  },
+  {
+    "id": "project-standard-in-subfolder",
+    "request": "Fix the quantity bug in the current module.",
+    "setup": "Install PlaidShirt, start a fresh session from src/deep/package, and do not mention the skill in the request.",
+    "checks": [
+      "Project standard applied without another invocation",
+      "Loaded source can be identified",
+      "Affected helpers documented",
+      "Relevant tests and documentation builds run",
+      "Conflicting more-specific rules recognized"
+    ]
+  }
+]

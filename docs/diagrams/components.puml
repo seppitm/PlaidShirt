@@ -1,0 +1,15 @@
+@startuml
+!pragma layout smetana
+title PlaidShirt: actual tooling modules
+component "plaidshirt.py\nCLI" as cli
+component "installation.py\nSkill and project instructions" as installation
+component "project.py\nFile inventory and markers" as project
+component "execution.py\nDocumentation and diagram jobs" as execution
+file ".plaidshirt.json\nProject commands" as config
+cli --> installation
+cli --> project
+cli --> execution
+installation --> project : validate project paths
+execution --> project : validate project paths
+execution --> config : read
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+!pragma layout smetana
+title Illustrative ER model: not this project's database
+entity Article {
+  * article_id : integer <<PK>>
+  --
+  * name : text
+}
+entity StockMovement {
+  * movement_id : integer <<PK>>
+  --
+  * article_id : integer <<FK>>
+  * quantity_delta : integer
+}
+Article ||--o{ StockMovement : concerns
+@enduml

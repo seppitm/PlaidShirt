@@ -1,0 +1,8 @@
+@startuml
+!pragma layout smetana
+title Example from docs-java.md: not a Python tooling class
+class InventoryCounter <<final>> {
+  - InventoryCounter()
+  + {static} countRemainingItems(totalCount: int, processedCount: int): int
+}
+@enduml

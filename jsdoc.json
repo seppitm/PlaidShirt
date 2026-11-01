@@ -1,0 +1,10 @@
+{
+  "source": {
+    "include": ["skills/plaidshirt/scripts/render_dot.mjs"],
+    "includePattern": ".+\\.m?js$"
+  },
+  "opts": {
+    "destination": "build/jsdoc",
+    "private": true
+  }
+}

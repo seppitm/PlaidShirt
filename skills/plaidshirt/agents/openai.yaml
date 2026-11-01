@@ -1,0 +1,4 @@
+interface:
+  display_name: "PlaidShirt"
+  short_description: "Readable code. Proper docs. One flannel shirt."
+  default_prompt: "Use $plaidshirt to implement this task with readable code, clear structure, and complete native documentation."
